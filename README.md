@@ -6,17 +6,17 @@ A distributed messaging system with 4 nodes that communicate over UDP. Two nodes
 
 ```
 macushla_pubsub/
-├── README.md              # This file
+├── README.md
 ├── python/
-│   ├── node1_pub.py       # Python publisher (motor commands)
-│   └── node3_sub.py       # Python subscriber
+│   ├── node1_pub.py       # Python publisher (motor velocity commands)
+│   └── node3_sub.py       # Python subscriber (motor controller)
 └── cpp/
     ├── CMakeLists.txt     # Build configuration for C++
     ├── node2_pub.cpp      # C++ publisher (emergency stop)
-    └── node4_sub.cpp      # C++ subscriber
+    └── node4_sub.cpp      # C++ subscriber (monitor)
 ```
 
-## Building the Project
+## Building instructions
 
 ### C++ Code (node2 and node4)
 
