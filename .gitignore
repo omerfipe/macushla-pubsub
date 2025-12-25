@@ -1,6 +1,6 @@
 # Build directories
-build/
 dist/
+build/
 out/
 cpp/build/
 *.sln
