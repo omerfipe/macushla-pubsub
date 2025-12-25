@@ -119,15 +119,16 @@ node4_sub.exe
 - Example message: `estop,0`
 
 ### Node 3 (Python Subscriber)
-- Listens to both `mot_vel` and `estop` topics
-- When it receives a motor command: prints the velocity to stdout
-- When it receives a stop command: sets velocity to 0 and ignores future motor commands until reset
-- Handles motor commands and emergency stop messages concurrently using separate threads
+- Subscribes to both `mot_vel` and `estop`
+- Applies motor commands only when estop = 0
+- Forces motor velocity to 0 and ignores commands when estop = 1
+- Handles both message types in a single receive loop (apparent concurrency)
 
 ### Node 4 (C++ Subscriber)
-- Listens only to the `estop` topic
-- Logs state transitions between "stop" and "safe" to a file called `safety_log.txt`
-- Includes a timestamp (milliseconds since node startup) with each log entry
+- Subscribes only to the `estop` topic
+- Maintains a safety state (SAFE / STOP)
+- Logs state transitions to safety_log.txt
+- Each log entry includes a timestamp in milliseconds since startup
 
 ## Communication Details
 
