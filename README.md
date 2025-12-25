@@ -20,6 +20,7 @@ macushla_pubsub/
 
 ### C++ Code (node2 and node4)
 
+Important NOTE: the build might need .\Debug\node2_pub.exe & .\Debug\node4_sub.exe
 From the `cpp/` directory:
 
 **Linux / macOS:**
@@ -37,7 +38,7 @@ cd cpp
 mkdir build
 cd build
 cmake ..
-cmake --build .
+cmake --build . ## might need --config Debug
 ```
 
 This creates executable files for the two C++ nodes.
